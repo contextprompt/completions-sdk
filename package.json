@@ -1,0 +1,62 @@
+{
+  "name": "@contextprompt/completions-sdk",
+  "version": "0.0.1",
+  "description": "Multi-provider completions SDK with MCP support for OpenAI, Claude, and Gemini",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run postbuild",
+    "postbuild": "echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "completions",
+    "openai",
+    "anthropic",
+    "claude",
+    "gemini",
+    "mcp",
+    "multi-provider",
+    "ai",
+    "sdk",
+    "contextprompt"
+  ],
+  "author": "ContextPrompt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contextprompt/completions-sdk.git"
+  },
+  "homepage": "https://github.com/contextprompt/completions-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/contextprompt/completions-sdk/issues"
+  },
+  "dependencies": {
+    "openai": "^4.0.0",
+    "dotenv": "^16.0.0",
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
