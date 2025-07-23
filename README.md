@@ -1,4 +1,3 @@
-```markdown
 # ContextPrompt Completions SDK
 
 A unified AI SDK that extends OpenAI's interface to support multiple providers (OpenAI, Claude, Gemini) with seamless Model Context Protocol (MCP) integration for external tools.
@@ -339,4 +338,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ---
 
 **Need help?** [Create an issue](https://github.com/contextprompt/completions-sdk/issues) or join our [discussions](https://github.com/contextprompt/completions-sdk/discussions).
-```
